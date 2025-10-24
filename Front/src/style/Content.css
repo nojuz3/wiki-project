@@ -1,0 +1,83 @@
+.content-main{
+    border: 1px solid rgb(255, 0, 0);
+    background-color: rgba(0, 0, 0, 0.904);
+    max-width: 85vw;
+    margin-left: 20px;
+    
+}
+.content-box{
+    display: flex;
+    box-sizing: border-box;
+    
+}
+.edit-button{
+    cursor: pointer;
+    background-color: black;
+    color: red;
+    border: 0;
+    width: 3vw;
+    border-right: 1px solid red;
+    
+}
+
+.main-content{
+    width: 90vw;
+    border: 1px solid rgb(255, 0, 0);
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+.content-image{
+    width: 100%;
+    height: 40vh;
+}
+.side-content{
+    border: 1px solid rgb(255, 0, 0);
+    width: 20vw;
+    max-height: fit-content;
+}
+.side-section{
+    border: 1px solid rgb(255, 0, 0);
+    margin: 0;
+    display: flex;
+}
+.side-info{
+    border-right: 1px solid rgb(255, 0, 0);
+    width: 45%;
+    margin: 0;
+    text-align: center;
+}
+.side-data{
+    margin: 0;
+    margin-left: 5px;
+}
+.input-content{
+    width: 25vw;
+}
+
+.risk-ZAYIN{
+    color: rgb(29, 249, 0);
+}
+.risk-TETH{
+    color: rgb(19, 162, 255);
+}
+.risk-HE{
+    color: rgb(255, 249, 0);
+}
+.risk-WAW{
+    color: rgb(123, 43, 243);
+}
+.risk-ALEPH{
+    color: red;
+}
+.damage-Red {
+  color: red;
+}
+.damage-White {
+  color: white;
+}
+.damage-Black {
+  color: rgb(107, 107, 107);
+}
+.damage-Pale {
+  color: rgb(0, 191, 255);
+}

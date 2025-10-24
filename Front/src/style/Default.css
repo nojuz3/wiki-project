@@ -1,0 +1,38 @@
+.default-content {
+  height: 100vh;
+  border: rgb(255, 0, 0) 1px solid;
+  background-color: rgba(0, 0, 0, 0.589);
+  width: 86vw;
+  box-sizing: border-box;
+  margin-left: 25px;
+}
+.angela {
+  position: absolute;
+  width: 10vw;
+  height: 55vh;
+  top: 52vh;
+  right: 80vw;
+  transform: scaleX(-1);
+}
+.chesed{
+  position: absolute;
+  width: 12vw;
+  height: 55vh;
+  top: 52vh;
+  right: 68vw;
+    transform: scaleX(-1);
+}
+.binah{
+  position: absolute;
+  width: 10vw;
+  height: 55vh;
+  top: 52vh;
+  right: 10vw;
+}
+.gebura {
+  position: absolute;
+  width: 11vw;
+  height: 55vh;
+  top: 53vh;
+  right: 0vw;
+}

@@ -1,0 +1,19 @@
+.abno-content{
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+}
+.abno-box{
+    border: 2px solid red;
+    background-color: rgba(0, 0, 0, 0.753);
+    height: 15vh;
+    width: 10vw;
+    max-height: 15vh;
+    max-width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

@@ -1,0 +1,62 @@
+@import url("../src/style/Content.css");
+@import url("../src/style/Nav.css");
+@import url("../src/style/Abnos.css");
+@import url("../src/style/Default.css");
+@import url("../src/style/Login.css");
+@import url("../src/style/Confirm.css");
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  background-image: url("../src/assets/Story_Angela_BG.png");
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.aside{
+  height: 100vh;
+  border: rgb(255, 0, 0) 1px solid;
+    background-color: rgba(0, 0, 0, 0.904);
+  max-width: 10vw;
+  box-sizing: border-box;
+}
+.aside-inner{
+  padding: 5px;
+  text-align: center;
+}
+.x{
+  cursor: pointer;
+  text-decoration: underline;
+  color: red;
+  display:block;
+  margin-top: 5px;
+}
+.main{
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.editor{
+  width: 84vw;
+
+}
+
+.side-img{
+  width: 100%;
+}
+.none{
+  text-decoration: none;
+  color: white;
+}
