@@ -57,7 +57,7 @@ const login = async (req, res) => {
         .json({ success: false, message: "Invalid credentials" });
     }
     const token = jwt.sign({ id: userRow.id, role: userRow.role }, JWT_SECRET, {
-      expiresIn: "1h",
+      expiresIn: "3h",
     });
 
     res.json({ success: true, token });
@@ -82,4 +82,13 @@ const me = async (req, res) => {
   }
 };
 
-module.exports = { register, login, me };
+const users = async (req, res) => {
+  try {
+    const users = db.prepare("SELECT * FROM users").all();
+    res.json({success: true, users});
+  } catch (error) {
+    res.status(500).json({ error: "Internal error" });
+  }
+};
+
+module.exports = { register, login, me, users };

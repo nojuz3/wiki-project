@@ -6,3 +6,11 @@
   box-sizing: border-box;
   margin-left: 25px;
 }
+.confirm-colaps{
+  cursor: pointer;
+  border: 1px solid red;
+  background-color: black;
+}
+.confirm-all{
+  background-color: black;
+}

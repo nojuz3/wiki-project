@@ -6,7 +6,7 @@ import Markdown from "react-markdown";
 import Md from "./Md";
 
 export default function Content() {
-  const { slug } = useParams(); 
+  const { slug } = useParams();
   const [page, setPage] = useState(null);
   const [view, setView] = useState(true);
   const [title, setTitle] = useState("");
@@ -18,11 +18,11 @@ export default function Content() {
   const [dmg, setDmg] = useState("");
   const [dmgnum, setDmgnum] = useState("");
   const [data, setData] = useState("");
-  const [counter,setCounter]= useState("");
-  const [image , setImage] = useState("");
-  const [user,setUser] = useState("");
+  const [counter, setCounter] = useState("");
+  const [image, setImage] = useState("");
+  const [user, setUser] = useState("");
   useEffect(() => {
-    if (!slug) return; 
+    if (!slug) return;
     const fetchData = async () => {
       try {
         axios
@@ -39,7 +39,7 @@ export default function Content() {
         setLevel(res.data.risk_level);
         setText(res.data.description_md);
         setCounter(res.data.Qliphoth);
-        setImage(res.data.Image)
+        setImage(res.data.Image);
         setData(res.data);
 
         console.log(res.data);
@@ -63,25 +63,32 @@ export default function Content() {
     };
     fetchUser();
     fetchData();
-
-
   }, [slug]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:8080/api/pages/${slug}/content`, {
-        identifier: id,
-        title: title,
-        description_md: text,
-        damage_type: dmg,
-        damage: dmgnum,
-        Qliphoth: counter,
-        Image: image,
-        risk_level: level,
-      });
+      await axios.post(
+        `http://localhost:8080/api/pages/${slug}/change`,
+        {
+          identifier: id,
+          title: title,
+          description_md: text,
+          damage_type: dmg,
+          damage: dmgnum,
+          Qliphoth: counter,
+          Image: image,
+          risk_level: level,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       setMessage("Content added!");
     } catch (err) {
       setMessage("Error adding content");
+      console.log(err);
     }
   };
   function click() {
@@ -96,10 +103,13 @@ export default function Content() {
 
   return (
     <div class="content-main">
-      {user.role !== "admin" || user.role !== "editor" && (
-        <button class="edit-button" onClick={() => click()}> {view ? "Edit" : "Preview"} </button>
-      )}
-      
+      {(user.role === "admin" || user.role === "editor") && (
+          <button class="edit-button" onClick={() => click()}>
+            {" "}
+            {view ? "Edit" : "Preview"}{" "}
+          </button>
+        )}
+
       {/* Content and editor */}
       <div>
         {view && (
@@ -132,9 +142,7 @@ export default function Content() {
                 </div>
                 <div class="side-section">
                   <p class="side-info">Qliphoth Counter:</p>
-                  <p class="side-data">
-                    {counter}
-                  </p>
+                  <p class="side-data">{counter}</p>
                 </div>
               </div>
             </div>
@@ -149,8 +157,13 @@ export default function Content() {
             <form onSubmit={handleSubmit} style={{ margin: "1em 0" }}>
               <div>
                 <div>
-                  <input class="input-content" placeholder="Image Url" value={image} onChange={(e) => setImage(e.target.value)} />
-                  </div>
+                  <input
+                    class="input-content"
+                    placeholder="Image Url"
+                    value={image}
+                    onChange={(e) => setImage(e.target.value)}
+                  />
+                </div>
                 <div>
                   <input
                     placeholder="Abnormalities Identification Code"
@@ -255,7 +268,7 @@ export default function Content() {
                   onChange={(e) => setDmgnum(e.target.value)}
                 />
                 <label for="Choice5-1">Damage amount</label>
-                <br/>
+                <br />
                 <input
                   type="text"
                   id="Choice6"

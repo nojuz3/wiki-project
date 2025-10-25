@@ -45,6 +45,7 @@ export default function Account() {
       setEmail("");
       setPassword("");
       setUsername("");
+      navigate("/Login")
     } catch (err) {
       console.log(err);
     }
