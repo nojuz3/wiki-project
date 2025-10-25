@@ -31,8 +31,8 @@ db.prepare(
   `
   CREATE TABLE IF NOT EXISTS content (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    identifier TEXT NOT NULL,
-    title TEXT NOT NULL,
+    identifier TEXT,
+    title TEXT,
     description_md TEXT,
     risk_level TEXT,
     damage_type TEXT,
@@ -49,18 +49,17 @@ db.prepare(
   `
   CREATE TABLE IF NOT EXISTS changes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    identifier TEXT NOT NULL,
-    title TEXT NOT NULL,
+    identifier TEXT,
+    title TEXT,
     description_md TEXT,
     risk_level TEXT,
     damage_type TEXT,
     damage TEXT,
     Qliphoth TEXT,
     Image TEXT,
+    username TEXT,
     user_id INTEGER NOT NULL,
     content_id INTEGER NOT NULL,
-    page_id INTEGER NOT NULL,
-    FOREIGN KEY (page_id) REFERENCES pages(id),
     FOREIGN KEY (content_id) REFERENCES content(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
   )
@@ -84,5 +83,9 @@ db.prepare(
 // db.prepare("INSERT INTO pages (title, slug) VALUES(?,?)").run("test","test")
 // db.prepare(`DROP TABLE IF EXISTS changes`).run();
 // db.prepare("DELETE FROM pages WHERE id = 2").run()
+
+
+
+
 
 module.exports = db;

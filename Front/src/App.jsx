@@ -7,6 +7,7 @@ import Abnos from "./comps/Abnos";
 import Account from "./comps/Account";
 import image from "./assets/downloa.png";
 import Confirm from "./comps/Confirm";
+import Users from "./comps/Users";
 
 function App() {
   const [cuser,setCuser] = useState("");
@@ -48,7 +49,11 @@ function App() {
               <Link class="x" to="/Abnormalities">Abnormalities</Link>
               <br />
               {cuser.role === "admin" &&(
+                <div>
                 <Link class="x" to="/Confirm">Confirm</Link>
+                <br />
+                <Link class="x" to="/Users">Users</Link>
+                </div>
               )}
             </div>
           </aside>
@@ -60,6 +65,7 @@ function App() {
               <Route path="/Login" element={<Account />} />
               <Route path="/Register" element={<Account />} />
               <Route path="/Confirm" element={<Confirm />} />
+              <Route path="/Users" element={<Users />} />
             </Routes>
           </main>
         </div>

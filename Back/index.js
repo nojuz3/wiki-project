@@ -13,6 +13,7 @@ const JWT_SECRET = process.env.JWT_SECRET || JSW;
 
 const pagesRouter = require("./src/routes/pages.js")
 
+
 const corsOptions = {
   origin: ["http://localhost:5173"],
 };

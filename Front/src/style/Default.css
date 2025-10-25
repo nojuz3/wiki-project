@@ -1,3 +1,8 @@
+@font-face{
+  font-family: nowester;
+  src: url("../assets/norwester.otf");
+}
+
 .default-content {
   height: 100vh;
   border: rgb(255, 0, 0) 1px solid;
@@ -35,4 +40,27 @@
   height: 55vh;
   top: 53vh;
   right: 0vw;
+}
+.abno-default-box{
+
+  height: fit-content;
+  max-width: max-content;
+  margin-left: 20vw;
+  margin-top: 20vh;
+}
+.abno-default-box div{
+  font-family: nowester;
+  background-color: rgba(0, 0, 0, 0.589);
+  color: yellow;
+  position: relative;
+  top: -50px;
+  left: 0;
+  height: 100%;
+  width: fit-content;
+  text-align: center;
+  display: flex;
+  justify-self: center;
+}
+.x5{
+  text-decoration: none;
 }
