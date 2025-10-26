@@ -7,6 +7,7 @@ export default function Users() {
   const token = localStorage.getItem("token");
   const [user, setUser] = useState("");
   const [users, setUsers] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   function check(user) {
     if (!user || user.role !== "admin") {
@@ -65,20 +66,29 @@ export default function Users() {
       console.log(error);
     }
   };
+  const filteredUsers = users.filter((index) =>
+    index.username.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
     <div class="confirm-box">
-      <div></div>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search username..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          class="search-input"
+        />
+      </div>
 
-      <div class="user-container">
-        {users &&
-          users.map((user, index) => (
+      <div className="user-container">
+        {filteredUsers.length > 0 ? (
+          filteredUsers.map((user, index) => (
             <div key={user.userid || index} class="users">
-              <p>
-                <strong>User: {user.username}</strong>
-              </p>
+              <p>User: {user.username}</p>
               <p>Email: {user.email}</p>
-              <label>Role:</label>
-              <select
+              <label >Role:</label>
+              <select 
                 value={user.role}
                 onChange={(e) => handleRoleChange(user.id, e.target.value)}
               >
@@ -87,7 +97,10 @@ export default function Users() {
                 <option value="admin">Admin</option>
               </select>
             </div>
-          ))}
+          ))
+        ) : (
+          <p>No users found.</p>
+        )}
       </div>
     </div>
   );
