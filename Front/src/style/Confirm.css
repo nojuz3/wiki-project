@@ -5,6 +5,9 @@
   width: 86vw;
   box-sizing: border-box;
   margin-left: 25px;
+  overflow-y: auto;  
+  overflow-x: hidden;
+  word-break: break-word; 
 }
 .confirm-colaps{
   cursor: pointer;
@@ -13,4 +16,21 @@
 }
 .confirm-all{
   background-color: black;
+}
+.users{
+  border: rgb(255, 0, 0) 1px solid;
+  background-color: rgb(0, 0, 0);
+}
+
+.search-container{
+  height: 3vh;
+  width: 15vw;
+  position: sticky;
+  top: 0;
+}
+.search-input{
+  border: 1px solid red;
+  background-color: black;
+  height: 88%;
+  width: 100%;
 }
