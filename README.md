@@ -1,3 +1,5 @@
+attemp to create a wiki from scratch
+
 `git clone https://github.com/nojuz3/Bad2.git`<br>
  `cd bad2 / cd front / cd back`<br>
  `npm install (Both front, back)`<br>
