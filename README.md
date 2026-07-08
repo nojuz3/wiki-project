@@ -5,4 +5,9 @@ Attempt to create a wiki from scratch
  `npm install (Both front, back)`<br>
  `npm run dev (For front and back)`<br>
 
+`port=`<br>
+`DB_FILE=`<br>
+`JWT_SECRET=`<br>
+
+
 
